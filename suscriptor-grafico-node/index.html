@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoreo de Pedidos en Tiempo Real</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f9; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #333; text-align: center; border-bottom: 2px solid #007bff; padding-bottom: 10px; }
+        .grid-header { font-weight: bold; background-color: #007bff; color: white; }
+        .pedido-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 12px; border-bottom: 1px solid #ddd; text-align: center; }
+        .pedido-row:nth-child(even) { background-color: #f9f9f9; }
+        #lista-pedidos { margin-top: 15px; max-height: 400px; overflow-y: auto; }
+        .badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 0.9em; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📥 Suscriptor 2: Panel de Pedidos en Tiempo Real</h1>
+    <p style="text-align: center; color: #666;">Los mensajes que llegan desde RabbitMQ se muestran aquí abajo instantáneamente</p>
+    
+    <div class="pedido-row grid-header">
+        <div>SKU ID Producto</div>
+        <div>Cantidad</div>
+        <div>Talla</div>
+        <div>Color</div>
+    </div>
+
+    <div id="lista-pedidos">
+        </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    const socket = io();
+    const listaPedidos = document.getElementById('lista-pedidos');
+
+    // Escuchar el evento 'nuevoPedido' enviado por el servidor de Node
+    socket.on('nuevoPedido', (pedido) => {
+        // Crear una nueva fila con los datos recibidos
+        const fila = document.createElement('div');
+        fila.className = 'pedido-row';
+        
+        fila.innerHTML = `
+            <strong>${pedido.sku}</strong>
+            <div>${pedido.cantidad}</div>
+            <div><span class="badge" style="background-color: #e2e8f0; color: #4a5568;">${pedido.talla}</span></div>
+            <div><span class="badge" style="background-color: #edf2f7; border: 1px solid #cbd5e0;">${pedido.color}</span></div>
+        `;
+        
+        // Insertar al principio de la lista para ver el más reciente arriba
+        listaPedidos.insertBefore(fila, listaPedidos.firstChild);
+    });
+</script>
+</body>
+</html>
