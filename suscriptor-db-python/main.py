@@ -4,7 +4,7 @@ import pymssql
 import os
 from dotenv import load_dotenv
 
-# 0. Cargar las variables de entorno al inicio del archivo
+
 load_dotenv()
 
 # 1. Configuración de Conexiones

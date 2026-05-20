@@ -1,4 +1,4 @@
-require('dotenv').config(); // 1. Cargar las variables de entorno al inicio del archivo
+require('dotenv').config();
 const client = require('amqplib');
 const express = require('express');
 const http = require('http');
