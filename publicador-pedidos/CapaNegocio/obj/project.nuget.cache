@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "8o7yHpi4XtM=",
+  "success": true,
+  "projectFilePath": "D:\\Arquitectura de Software\\Entrega3\\publicador-pedidos\\CapaNegocio\\CapaNegocio.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PAVILION\\.nuget\\packages\\rabbitmq.client\\7.2.1\\rabbitmq.client.7.2.1.nupkg.sha512",
+    "C:\\Users\\PAVILION\\.nuget\\packages\\system.threading.ratelimiting\\8.0.0\\system.threading.ratelimiting.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

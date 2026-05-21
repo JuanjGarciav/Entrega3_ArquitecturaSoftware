@@ -12,7 +12,7 @@ const io = new Server(server);
 
 // Configuración de RabbitMQ protegida mediante variables de entorno
 const CLOUDAMQP_URL = process.env.RABBIT_URL; 
-const COLA = process.env.RABBIT_COLA || "cola.grafica"; // Usa "cola.grafica" por defecto si falla el .env
+const COLA = process.env.RABBIT_COLA || "cola.grafica";
 
 // Servir la página web de la interfaz gráfica
 app.get('/', (req, res) => {
@@ -40,7 +40,6 @@ async function iniciarSuscriptor() {
                 try {
                     const datos = JSON.parse(mensajeString);
 
-                    // REQUERIMIENTO ÚNICO: Mostrar en Interfaz Gráfica (Enviar al navegador vía WebSockets)
                     io.emit('nuevoPedido', datos);
                     console.log("Pedido renderizado en la interfaz web (Puerto 3000)");
 

@@ -17,3 +17,6 @@ __pycache__/
 # Archivos de configuración local y secretos
 .env
 **/.env
+
+# Ocultar contraseñas reales de C#
+**/CapaPresentacion/App.config

@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "gY0349wcxRM=",
+  "success": true,
+  "projectFilePath": "D:\\Arquitectura de Software\\Entrega3\\publicador-pedidos\\CapaPresentacion\\CapaPresentacion.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PAVILION\\.nuget\\packages\\rabbitmq.client\\7.2.1\\rabbitmq.client.7.2.1.nupkg.sha512",
+    "C:\\Users\\PAVILION\\.nuget\\packages\\system.configuration.configurationmanager\\10.0.8\\system.configuration.configurationmanager.10.0.8.nupkg.sha512",
+    "C:\\Users\\PAVILION\\.nuget\\packages\\system.threading.ratelimiting\\8.0.0\\system.threading.ratelimiting.8.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1510",
+      "level": "Warning",
+      "message": "PackageReference System.Configuration.ConfigurationManager no se eliminará. Considere la posibilidad de quitar este paquete de las dependencias, ya que es probable que no sea necesario.",
+      "projectPath": "D:\\Arquitectura de Software\\Entrega3\\publicador-pedidos\\CapaPresentacion\\CapaPresentacion.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Arquitectura de Software\\Entrega3\\publicador-pedidos\\CapaPresentacion\\CapaPresentacion.csproj",
+      "libraryId": "System.Configuration.ConfigurationManager",
+      "targetGraphs": [
+        "net10.0-windows7.0"
+      ]
+    }
+  ]
+}
